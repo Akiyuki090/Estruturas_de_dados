@@ -1,31 +1,31 @@
 '''
-Criação de uma pilha (LIFO) com todos os métodos
+Criação de uma fila (FIFO) com todos os métodos
 '''
-class Pilha:
+
+class Fila:
     def __init__(self):
         self.items = []
 
     def is_vazia(self):
         return len(self.items) == 0
 
-    def push(self, item):
+    def enqueue(self, item):
         self.items.append(item)
 
-    def pop(self):
+    def dequeue(self):
         if not self.is_vazia():
-            return self.items.pop()
+            return self.items.pop(0)
         else:
-            raise IndexError("A pilha está vazia")
+            raise IndexError("A fila está vazia")
 
     def peek(self):
         if not self.is_vazia():
-            return self.items[-1]
+            return self.items[0]
         else:
-            raise IndexError("A pilha está vazia")
+            raise IndexError("A fila está vazia")
 
     def tamanho(self):
         return len(self.items)
 
 if "_name"=="main_":
-    minhaPilha = Pilha()
-    
+    minhaFila = Fila()
