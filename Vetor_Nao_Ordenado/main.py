@@ -30,7 +30,7 @@ class VetorNaoOrdenado:
         else:
             print("Elemento não encontrado.")
 
-if "__name__"=="__main__":
+if __name__ == "__main__":
     meu_vetor = VetorNaoOrdenado()
     meu_vetor.adicionar_elemento(5)
     meu_vetor.adicionar_elemento(2)

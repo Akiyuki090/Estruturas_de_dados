@@ -26,6 +26,6 @@ class Pilha:
     def tamanho(self):
         return len(self.items)
 
-if "_name"=="main_":
+if __name__ == "__main__":
     minhaPilha = Pilha()
     

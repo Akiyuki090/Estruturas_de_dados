@@ -33,5 +33,5 @@ class Deque:
     def ver_deque(self):
         print(self.items)
 
-if "_name"=="main_":
+if __name__ == "__main__":
     meuDeque = Deque()

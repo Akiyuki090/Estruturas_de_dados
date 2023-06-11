@@ -32,6 +32,6 @@ class vetor_ordenado:
     def verVetor(self):
         print(self.vetor)
 
-if "_name"=="main_":
+if __name__ == "__main__":
     meuVetor = vetor_ordenado()
     

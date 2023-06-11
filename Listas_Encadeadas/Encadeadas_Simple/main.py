@@ -1,25 +1,26 @@
 '''
 Criação de uma lista encadeada simples com todos os métodos
 '''
-
 class Node:
-    def _init_(self, valor):
+    def __init__(self, valor):
         self.valor = valor
         self.next = None
 
 class linkedListSample:
-    def _init_(self):
+    def __init__(self):
         self.head = None
     
-    def insereinicio(self, valor):
+    def insereInicio(self, valor):
         novoValor = Node(valor)
         novoValor.next = self.head
         self.head = novoValor
 
     def excluiInicio(self):
         if self.head != None:
-            self.head = self.head.next
-    
+            self.head = self.head.next # só se a lista n estiver vazia
+        else:
+            print('Lista vazia !') 
+        
     def pesquisaElemento(self, elemento):
         current = self.head
         position = 0
@@ -27,14 +28,11 @@ class linkedListSample:
         while current != None:
             if current.valor == elemento:
                 print(f'Elemento encontrado, posição: {position}')
-            else:
-                print('Elemento não encontrado')
-            current = current.next # nosso incremento
-            position += 1 # incrementando para achar a posicao
+                return
+            current = current.next # incremento
+            position += 1 # incremento para achar a posição
             
-        if self.head == None:
-            print('Lista vazia')
-            return None
+        print('Elemento não encontrado')
     
     def excluiPosicao(self, posicao):
         if posicao < 0 or self.head is None:
@@ -61,13 +59,14 @@ class linkedListSample:
             print(current.valor, end=" ")
             current = current.next
         print()
-        
-if "__name__"=="__main__":           
+
+if __name__ == "__main__":
     minhaLista = linkedListSample()
-    minhaLista.insereinicio(5)
-    minhaLista.insereinicio(9)
-    minhaLista.insereinicio(8)
-    minhaLista.insereinicio(10) # -> é o primeiro da lista
+    minhaLista.insereInicio(5)
+    minhaLista.insereInicio(9)
+    minhaLista.insereInicio(8)
+    minhaLista.insereInicio(10) # -> é o primeiro da lista
+    minhaLista.mostrar()
     minhaLista.excluiInicio()
     minhaLista.mostrar()
     minhaLista.pesquisaElemento(5)

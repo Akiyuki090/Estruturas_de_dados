@@ -20,7 +20,7 @@ class FilaPrioridade:
     def esta_vazia(self):
         return len(self.heap) == 0
     
-if "_name"=="main_":
+if __name__ == "__main__":
     # Exemplo de uso
     fila = FilaPrioridade()
 
